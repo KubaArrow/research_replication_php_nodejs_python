@@ -12,13 +12,13 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, name, value FROM myTable"; // Zapytanie SQL
+$sql = "SELECT name, value FROM myTable"; // Zapytanie SQL
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // Wyświetlenie danych każdego wiersza
     while($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - Value: " . $row["value"]. "<br>";
+        echo  "Name: " . $row["name"]. " - Value: " . $row["value"]. "<br>";
     }
 } else {
     echo "0 results";
